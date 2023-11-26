@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alquiler de Bicicletas Nodo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+
+<body>
+    <header class="my-4">
+        <img src="../img/nodo1.png" class="col-6 centrar" alt="">
+    </header>
+
+    <section>
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center ">
+                <div class="col col-xl-10">
+                    <div class="col-md-12 col-lg-12 d-flex ">
+                        <div class="card-body p-4 p-lg-2 text-black">
+
+                            <form>
+                                <div class="row form-row ">
+                                    <div class="form-group col-md-6 py-1">
+                                        <label for="inputNombres">Nombres</label>
+                                        <input type="name" class="form-control" id="inputNombres" placeholder="Nombres">
+                                    </div>
+                                    <div class="form-group col-md-6 py-1">
+                                        <label for="inputApellidos">Apellidos</label>
+                                        <input type="last_name" class="form-control" id="inputApellidos"
+                                            placeholder="Apellidos">
+                                    </div>
+                                </div>
+                                <div class="row form-row">
+                                    <div class="form-group col-md-6 py-1">
+                                        <label for="inputTelefono">Telefono</label>
+                                        <input type="phone" class="form-control" id="inputTelefono"
+                                            placeholder="Telefono">
+                                    </div>
+                                    <div class="form-group col-md-6 py-1">
+                                        <label for="inputCedula">Cedula/RUC</label>
+                                        <input type="id" class="form-control" id="inputCedula/RUC"
+                                            placeholder="Cedula/RUC">
+                                    </div>
+                                </div>
+                                <div class="row form-row">
+                                    <div class="col form-group col-md-6 py-1">
+                                        <label for="inputEmail4">Correo Electronico</label>
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                    </div>
+                                    <div class=" col form-group col-md-6 py-1">
+                                        <label for="inputPassword4">Contraseña</label>
+                                        <input type="password" class="form-control" id="inputPassword4"
+                                            placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="row form-row ">
+                                    <div class="col form-group col-md-6 py-1">
+                                        <label for="inputEmail4">Confirmar Correo Electronico</label>
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                    </div>
+                                    <div class=" col form-group col-md-6 py-1">
+                                        <label for="inputPassword4">Confirmar Contraseña</label>
+                                        <input type="password" class="form-control" id="inputPassword4"
+                                            placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class=" row form-row ">
+                                    <div class="form-group col-md-6 py-1">
+                                        <label for="inputProvincia">Provincia</label>
+                                        <select id="inputProvincia" class="form-control">
+                                            <option value="" selected>Choose...</option>
+                                            <option value="province1">Province 1</option>
+                                            <option value="province2">Province 2</option>
+                                            <!-- Agrega más opciones según sea necesario -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4 py-1">
+                                        <label for="inputCiudad">Ciudad</label>
+                                        <select id="inputCiudad" class="form-control" disabled>
+                                            <option value="" selected>Choose...</option>
+                                            <!-- Agrega las opciones de las ciudades según sea necesario -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2 py-1">
+                                        <label for="inputZip">Codigo Postal</label>
+                                        <input type="text" class="form-control" id="inputZip">
+                                    </div>
+                                </div>
+                                <div class=" row form-row ">
+                                    <div class="form-group col-md-12 py-1">
+
+                                        <label for="inputAddress">Direccion</label>
+                                        <input type="text" class="form-control" id="inputAddress"
+                                            placeholder="1234 Main St">
+                                    </div>
+                                </div>
+                                <div class=" row form-row ">
+
+                                    <div class="form-group py-1">
+                                        <label for="inputAddress2">Direccion 2</label>
+                                        <input type="text" class="form-control" id="inputAddress2"
+                                            placeholder="(Opcional)">
+                                    </div>
+                                </div>
+                                <div class="form-group my-3 ms-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <label class="form-check-label" for="gridCheck">
+                                            He leído y acepto los <a href="">términos y condiciones de uso </a> </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-danger ms-3">Siguiente</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark pb-1 pt-1">
+        <div class="row my-2">
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-white">© 2017–2023</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5 class="text-white">Features</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5 class="text-white">Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5 class="text-white">Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Business</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Education</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Government</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Gaming</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5 class="text-white">About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('inputProvincia').addEventListener('change', function () {
+            var ciudadSelect = document.getElementById('inputCiudad');
+            ciudadSelect.disabled = (this.value === '');
+        });
+    </script>
+</body>
+
+</html>
