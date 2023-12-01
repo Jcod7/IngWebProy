@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, Validators} from '@angular/forms';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { LoginService } from 'src/app/services/auth/login.service';
 import { LoginRequest } from 'src/app/services/auth/loginRequest';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from "../../shared/nav/nav.component";
 import { NewpasswordComponent } from "../../shared/newpassword/newpassword.component";
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
     selector: 'app-login',
     standalone: true,
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css'],
-    imports: [CommonModule, RouterOutlet, ReactiveFormsModule, NavComponent, NewpasswordComponent]
+    imports: [CommonModule, RouterOutlet, ReactiveFormsModule, LoginComponent,NavComponent, NewpasswordComponent,HttpClientModule]
 })
 export class LoginComponent implements OnInit {
   loginError:string="";
@@ -59,6 +60,11 @@ userLoginOn: any;
       this.loginForm.markAllAsTouched();
       alert("Error al ingresar los datos.");
     }
+  }
+
+  nwpass(){
+    this.loginService.logout();
+    this.router.navigate(['/forgot-password'])
   }
 
 }

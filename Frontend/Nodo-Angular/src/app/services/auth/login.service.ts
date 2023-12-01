@@ -24,6 +24,10 @@ export class LoginService {
     );
   }
 
+  logout() :void{
+    this.currentUserLoginOn.next(false);
+  }
+
   private handleError(error:HttpErrorResponse){
     if(error.status===0){
       console.error('Se ha producio un error ', error.error);
