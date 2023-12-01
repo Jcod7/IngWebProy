@@ -90,3 +90,57 @@ body {
   }
 }
 
+nav img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+img#preview-image {
+  width: 100px; /* Tamaño deseado */
+  height: 100px; /* Tamaño deseado */
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px; /* Ajusta según sea necesario */
+}
+
+container {
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+card {
+  margin-bottom: 20px;
+}
+
+card-body {
+  text-align: center;
+}
+
+#preview-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+btn-update {
+  margin-top: 10px;
+}
+
+info-card {
+  margin-top: 20px;
+  
+}
+
+form-group {
+  margin-bottom: 15px;
+}
+
