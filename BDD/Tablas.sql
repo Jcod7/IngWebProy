@@ -1,14 +1,37 @@
+-- Tabla de Roles
+CREATE TABLE Roles (
+    ID INT PRIMARY KEY,
+    Nombre VARCHAR(20) UNIQUE
+);
+
+-- Insertar roles predefinidos
+INSERT INTO Roles (ID, Nombre) VALUES
+(1, 'Usuario'),
+(2, 'Administrador'),
+(3, 'Mantenimiento');
+
 -- Tabla de Usuarios
 CREATE TABLE Usuarios (
-    UserID INT PRIMARY KEY AUTO_INCREMENT,
+    Cedula VARCHAR(20) PRIMARY KEY,
     Nombre VARCHAR(255),
     Apellido VARCHAR(255),
     CorreoElectronico VARCHAR(255) UNIQUE,
     Contraseña VARCHAR(255),
     Direccion VARCHAR(255),
-    Telefono VARCHAR(15)
+    Telefono VARCHAR(15),
+    Estado BOOLEAN DEFAULT FALSE,
+    RolID INT default 1,
+    FOREIGN KEY (RolID) REFERENCES Roles(ID)
 );
 
+-- Tabla de Ubicaciones
+CREATE TABLE Ubicaciones (
+    LocationID INT PRIMARY KEY AUTO_INCREMENT,
+    NombreUbicacion VARCHAR(255),
+    Latitud DECIMAL(10, 6),
+    Longitud DECIMAL(10, 6),
+    Direccion VARCHAR(255)
+);
 -- Tabla de Bicicletas
 CREATE TABLE Bicicletas (
     BikeID INT PRIMARY KEY AUTO_INCREMENT,
@@ -24,57 +47,49 @@ CREATE TABLE Bicicletas (
 -- Tabla de Alquileres
 CREATE TABLE Alquileres (
     RentalID INT PRIMARY KEY AUTO_INCREMENT,
-    UserID INT,
+    Cedula Varchar(20),
     BikeID INT,
     FechaInicio DATETIME,
     FechaFin DATETIME,
     EstadoAlquiler VARCHAR(50),
     MontoTotal DECIMAL(8, 2),
     LocationID INT,
-    FOREIGN KEY (UserID) REFERENCES Usuarios(UserID),
+    FOREIGN KEY (Cedula) REFERENCES Usuarios(Cedula),
     FOREIGN KEY (BikeID) REFERENCES Bicicletas(BikeID),
     FOREIGN KEY (LocationID) REFERENCES Ubicaciones(LocationID)
 );
 
--- Tabla de Ubicaciones
-CREATE TABLE Ubicaciones (
-    LocationID INT PRIMARY KEY AUTO_INCREMENT,
-    NombreUbicacion VARCHAR(255),
-    Latitud DECIMAL(10, 6),
-    Longitud DECIMAL(10, 6),
-    Direccion VARCHAR(255)
-);
 
 -- Tabla de Transacciones
 CREATE TABLE Transacciones (
     TransactionID INT PRIMARY KEY AUTO_INCREMENT,
-    UserID INT,
+    Cedula Varchar(20),
     RentalID INT,
     Monto DECIMAL(8, 2),
     MetodoPago VARCHAR(50),
     FechaTransaccion DATETIME,
-    FOREIGN KEY (UserID) REFERENCES Usuarios(UserID),
+    FOREIGN KEY (Cedula) REFERENCES Usuarios(Cedula),
     FOREIGN KEY (RentalID) REFERENCES Alquileres(RentalID)
 );
 
 -- Tabla de Calificaciones y Reseñas
 CREATE TABLE CalificacionesResenas (
     ReviewID INT PRIMARY KEY AUTO_INCREMENT,
-    UserID INT,
+    Cedula Varchar(20),
     BikeID INT,
     Comentario TEXT,
     Calificacion INT,
     FechaResena DATETIME,
-    FOREIGN KEY (UserID) REFERENCES Usuarios(UserID),
+    FOREIGN KEY (Cedula) REFERENCES Usuarios(Cedula),
     FOREIGN KEY (BikeID) REFERENCES Bicicletas(BikeID)
 );
 
 -- Tabla de Propietarios de Bicicletas
 CREATE TABLE PropietariosBicicletas (
     OwnerID INT PRIMARY KEY AUTO_INCREMENT,
-    UserID INT,
+    Cedula varchar(20),
     BikeID INT,
-    FOREIGN KEY (UserID) REFERENCES Usuarios(UserID),
+    FOREIGN KEY (Cedula) REFERENCES Usuarios(Cedula),
     FOREIGN KEY (BikeID) REFERENCES Bicicletas(BikeID)
 );
 
@@ -103,10 +118,10 @@ CREATE TABLE ControlCalidad (
 -- Tabla de Filtrados y Preferencias
 CREATE TABLE FiltradosPreferencias (
     FilterID INT PRIMARY KEY AUTO_INCREMENT,
-    UserID INT,
+    Cedula Varchar(20),
     TipoFiltro VARCHAR(50),
     ValorFiltro VARCHAR(255),
-    FOREIGN KEY (UserID) REFERENCES Usuarios(UserID)
+    FOREIGN KEY (Cedula) REFERENCES Usuarios(Cedula)
 );
 
 -- Tabla de Incidentes
@@ -119,33 +134,24 @@ CREATE TABLE Incidentes (
     FOREIGN KEY (RentalID) REFERENCES Alquileres(RentalID)
 );
 
--- Tabla de Robos
-CREATE TABLE Robos (
-    RoboID INT PRIMARY KEY AUTO_INCREMENT,
-    BikeID INT,
-    DescripcionRobo TEXT,
-    FechaRobo DATETIME,
-    FOREIGN KEY (BikeID) REFERENCES Bicicletas(BikeID)
-);
-
 -- Tabla de Pagos
 CREATE TABLE Pagos (
     PaymentID INT PRIMARY KEY AUTO_INCREMENT,
-    UserID INT,
+    Cedula Varchar(20),
     Monto DECIMAL(8, 2),
     MetodoPago VARCHAR(50),
     FechaPago DATETIME,
-    FOREIGN KEY (UserID) REFERENCES Usuarios(UserID)
+    FOREIGN KEY (Cedula) REFERENCES Usuarios(Cedula)
 );
 
 -- Tabla de Garantías
 CREATE TABLE Garantias (
     WarrantyID INT PRIMARY KEY AUTO_INCREMENT,
-    UserID INT,
+    Cedula Varchar(20),
     BikeID INT,
     DescripcionGarantia TEXT,
     FechaInicioGarantia DATETIME,
     FechaFinGarantia DATETIME,
-    FOREIGN KEY (UserID) REFERENCES Usuarios(UserID),
+    FOREIGN KEY (Cedula) REFERENCES Usuarios(Cedula),
     FOREIGN KEY (BikeID) REFERENCES Bicicletas(BikeID)
 );
