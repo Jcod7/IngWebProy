@@ -8,13 +8,14 @@ import { NavComponent } from "./shared/nav/nav.component";
 import { HttpClientModule } from '@angular/common/http'
 import { SectionComponent } from "./shared/section/section.component";
 import { NewpasswordComponent } from './shared/newpassword/newpassword.component';
+import { RegisterComponent } from "./shared/register/register.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    imports: [CommonModule, RouterOutlet, FooterComponent, HeaderComponent, DashboardComponent, NavComponent,NewpasswordComponent, HttpClientModule, RouterLink, SectionComponent]
+    imports: [CommonModule, RouterOutlet, FooterComponent, HeaderComponent, DashboardComponent, NavComponent, NewpasswordComponent, HttpClientModule, RouterLink, SectionComponent, RegisterComponent]
 })
 
 export class AppComponent {

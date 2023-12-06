@@ -8,18 +8,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from "../../shared/nav/nav.component";
 import { NewpasswordComponent } from "../../shared/newpassword/newpassword.component";
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from 'src/app/shared/register/register.component';
 
 @Component({
     selector: 'app-login',
     standalone: true,
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css'],
-    imports: [CommonModule, RouterOutlet, ReactiveFormsModule, LoginComponent,NavComponent, NewpasswordComponent,HttpClientModule]
+    imports: [CommonModule, RouterOutlet,RouterLink, ReactiveFormsModule, LoginComponent,NavComponent, NewpasswordComponent,HttpClientModule,RegisterComponent]
 })
 export class LoginComponent implements OnInit {
   loginError:string="";
   loginForm=this.formBuilder.group({
-    email:['correo@gmail.com',[Validators.required,Validators.email]],
+    email:['correo22@gmail.com',[Validators.required,Validators.email]],
     password: ['123',Validators.required],
   })
 userLoginOn: any;
@@ -63,8 +64,7 @@ userLoginOn: any;
   }
 
   nwpass(){
-    this.loginService.logout();
-    this.router.navigate(['/forgot-password'])
+    this.router.navigate(['forgot-password'])
   }
 
 }

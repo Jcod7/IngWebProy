@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NewpasswordComponent } from './shared/newpassword/newpassword.component';
+import { RegisterComponent } from './shared/register/register.component';
 
 
 export const routes: Routes = [
@@ -10,5 +11,7 @@ export const routes: Routes = [
   {path:'iniciar-sesion',component:LoginComponent},
   {path:'forgot-password',component:NewpasswordComponent},
   {path:'forgot-password',redirectTo:'/forgot-password', pathMatch:'full'},
+  {path:'register',component:RegisterComponent},
+  {path:'register',redirectTo:'/register', pathMatch:'full'}
 ];
 
