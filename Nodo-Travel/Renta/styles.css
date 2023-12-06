@@ -1,0 +1,17 @@
+catalogo img {
+    height: 200px; /* Establece la altura deseada */
+    width: 100%; /* Utiliza el 100% del ancho del contenedor */
+    object-fit: cover; /* Mantiene la proporción y recorta la imagen si es necesario */
+}
+
+#phone,
+#province,
+#address,
+#city,
+#postal-code {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
