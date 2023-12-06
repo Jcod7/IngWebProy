@@ -1,187 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Perfil</title>
+    <title>Renta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 </head>
+
 <body>
 
-    <body>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"></script>
 
-      <nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between 
-      py-3 mb-4 border-bottom bg-dark">
-      <div class="col-md-3  mb-2 mb-md-0">
-        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none ">
-          <img src="img/nodo1.png" aria-label="Bootstrap" class="bi my-auto mx-5" width="45" role="img" alt="">
-        </a>
-      </div>
-      <form class="col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="Buscar...">
-    <button class="btn btn-outline-secondary" type="button">
-      <img src="img/buscar.png" alt="Buscar" width="24" height="24">
-    </button>
-  </div>
-</form>
-
-<div class="col-md-3 text-end me-3">
-  <button type="button" class="btn btn-danger">
-    <img src="img/casa.png" alt="Botón 1" width="24" height="24">
-  </button>
-  <button type="button" class="btn btn-danger">
-    <img src="img/carrito-de-compras.png" alt="Botón 2" width="24" height="24">
-  </button>
-  <button type="button" class="btn btn-outline-danger me-2 text-white"><a href="Acceso/login.html">Login</a></button>
-</div>
-</nav>
-
-
-    <section class="container Contenido text-center">
+    <div id="featured-products-1408627" class="container">
+        <!-- Products Section -->
         <div class="row">
-          <div class="col-12">
-            <h1 class="centrado">Configuracion</h1>
-            <h2 class="centrado my-4">Bienvenido a la pagina de Configuracion</h2>
-          </div>
-          <div class="col-12">
-            <button type="button" class="btn">Perfil</button>
-            <button type="button" class="btn">Historia de renta</button>
-            <button type="button" class="btn">Seguridad</button>
-            <button type="button" class="btn">Metodo de pago</button>
-          </div>
-        </div>
-      </section>
 
-      <body>
+            <div class="col-12">
+                <h2 class="page-header">Catalogo de Bicicletas</h2>
+            </div>
 
-
-        <h3>Perfil de usuario</h3>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 mb-4 mb-sm-0">
-                    <div class="card">
-                        <div class="card-body">
-                            <form id="profile-form">
-                                <label for="username">Nombre de usuario:</label>
-                                <input type="text" id="username" name="username" required>
-        
-                                <label for="profile-image">Imagen de perfil:</label>
-                                <input type="file" id="profile-image" name="profileImage">
-        
-                                <img src="img/User.png" alt="Imagen de perfil" id="preview-image">
-        
-                                <button type="button" onclick="updateProfile()" class="btn btn-primary btn-update">Guardar</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <h3>Actualizar Perfil</h3>
-                <div class="col-sm-5">
-                    <div class="card">
-                        <div class="card-body">
-                            <label for="email">Correo electrónico:</label>
-                            <input type="email" id="email" name="email" required>
-        
-                            <label for="password">Contraseña:</label>
-                            <input type="password" id="password" name="password" required>
-        
-                            <button type="button" onclick="updateProfile()" class="btn btn-primary btn-update">Guardar</button>
-                        </div>
+            <style>
+                .catalogo img {
+                    height: 200px; /* Establece la altura deseada */
+                    width: 100%; /* Utiliza el 100% del ancho del contenedor */
+                    object-fit: cover; /* Mantiene la proporción y recorta la imagen si es necesario */
+                }
+            </style>
+            <!-- Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card catalogo">
+                    <img class="card-img-top my-2" src="https://i.pinimg.com/564x/62/d1/48/62d148c3d027d3f6d01c9e07ee64c9fc.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title"><a>Bicicleta Urbana</a></h4>
+                        <p class="card-text">Luces integradas, Neumaticos anchos y resistentes, transmision de golpe o de buje interno</p>
+                        <p class="card-text">Disponible</p>
+                        <a href="#" class="btn btn-danger">Reservar</a>
                     </div>
                 </div>
             </div>
-        
-            <h3>Información Personal</h3>
 
-            <div class="card info-card">
-                <div class="card-body">
-                    <label for="phone">Teléfono:</label>
-                    <input type="tel" id="phone" name="phone">
-        
-                    <label for="province">Provincia:</label>
-                    <input type="text" id="province" name="province">
-        
-                    <label for="address">Dirección:</label>
-                    <input type="text" id="address" name="address">
-        
-                    <label for="city">Ciudad:</label>
-                    <input type="text" id="city" name="city">
-        
-                    <label for="postal-code">Código Postal:</label>
-                    <input type="text" id="postal-code" name="postalCode">
-        
-                    <button type="button" onclick="updateProfile()" class="btn btn-primary btn-update">Guardar</button>
+            <!-- Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card catalogo">
+                    <img class="card-img-top my-2" src="https://i.pinimg.com/564x/6b/e2/0b/6be20bb01b2adb551723a367e3808e62.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title"><a>Bicicleta Montaña</a></h4>
+                        <p class="card-text">Suspension, Neumaticos todo terreno, Cuadro resistente, frenos de disco, geometria especifica</p>
+                        <p class="card-text">Disponible</p>
+                        <a href="#" class="btn btn-danger">Reservar</a>
+                    </div>
                 </div>
             </div>
+            <!-- Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card catalogo">
+                    <img class="card-img-top my-2" src="https://i.pinimg.com/564x/4f/d0/67/4fd067f819c7d65258c36c2f1055e2e9.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title"><a>Bicicleta Electrica</a></h4>
+                        <p class="card-text">Motor Electrico, Bateria Recargable, Sistema de asistencia al pedaleo, pantalla u controles</p>
+                        <p class="card-text">Disponible</p>
+                        <a href="#" class="btn btn-danger">Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card catalogo">
+                    <img class="card-img-top my-2" src="https://i.pinimg.com/564x/2c/07/8a/2c078af7c739a0887ef5cf5d7f2eab53.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title"><a>Trek Fuel EX</a></h4>
+                        <p class="card-text">Una bicicleta de trail con suspensión completa, diseñada para enfrentar terrenos variados con eficiencia y comodidad.</p>
+                        <p class="card-text">Disponible</p>
+                        <a href="#" class="btn btn-danger">Reservar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card catalogo">
+                    <img class="card-img-top my-2" src="https://i.pinimg.com/564x/23/62/85/236285154860a2bbaaf94243899de386.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title"><a>Trek Remedy</a></h4>
+                        <p class="card-text">Una bicicleta all-mountain con suspensión completa, ideal para aquellos que buscan versatilidad en descensos y ascensos más agresivos.</p>
+                        <p class="card-text">Disponible</p>
+                        <a href="#" class="btn btn-danger">Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card catalogo">
+                    <img class="card-img-top my-2" src="https://i.pinimg.com/564x/08/97/bb/0897bbdec099293bbe5a139f4c79a80a.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title"><a>Cube Aim</a></h4>
+                        <p class="card-text">Una bicicleta de montaña hardtail (suspensión delantera) diseñada para principiantes y ciclistas que buscan una opción versátil y asequible.</p>
+                        <p class="card-text">Disponible</p>
+                        <a href="#" class="btn btn-danger">Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card catalogo">
+                    <img class="card-img-top my-2" src="https://i.pinimg.com/564x/f3/fb/f7/f3fbf7b2896aec6a844f0305f491b1b9.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title"><a>Cube Stereo</a></h4>
+                        <p class="card-text">Una bicicleta de montaña con suspensión total diseñada para terrenos más técnicos y descensos agresivos.</p>
+                        <p class="card-text">Disponible</p>
+                        <a href="#" class="btn btn-danger">Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card catalogo">
+                    <img class="card-img-top my-2" src="https://i.pinimg.com/564x/c6/d9/8f/c6d98f8107af76607f5d999df76e8b14.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title"><a>Cube Reaction Hybrid</a></h4>
+                        <p class="card-text">Una bicicleta eléctrica de montaña hardtail que combina la asistencia eléctrica con la versatilidad de una MTB para explorar terrenos variados.</p>
+                        <p class="card-text">Disponible</p>
+                        <a href="#" class="btn btn-danger">Reservar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /.row -->
         </div>
-        
-        </body>
 
-    <script>
-        function updateProfile() {
-            var username = document.getElementById('username').value;
-            var email = document.getElementById('email').value;
-            var phone = document.getElementById('phone').value;
-            var province = document.getElementById('province').value;
-            var address = document.getElementById('address').value;
-            var city = document.getElementById('city').value;
-            var postalCode = document.getElementById('postal-code').value;
 
-            // Puedes agregar lógica para manejar la imagen de perfil aquí
+</body>
 
-            // Aquí puedes enviar los datos al servidor usando AJAX o Fetch API
-            // Por ejemplo, puedes usar la función fetch() para enviar una solicitud POST al servidor
-
-            // Ejemplo con fetch:
-            fetch('/actualizar_perfil', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    username: username,
-                    email: email,
-                    phone: phone,
-                    province: province,
-                    address: address,
-                    city: city,
-                    postalCode: postalCode,
-                    // Puedes agregar más datos según sea necesario
-                }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Aquí puedes manejar la respuesta del servidor
-                console.log('Perfil actualizado con éxito:', data);
-            })
-            .catch(error => {
-                console.error('Error al actualizar el perfil:', error);
-            });
-        }
-
-        // Vista previa de la imagen de perfil antes de subirla
-        document.getElementById('profile-image').addEventListener('change', function(event) {
-            var preview = document.getElementById('preview-image');
-            preview.src = URL.createObjectURL(event.target.files[0]);
-        });
-
-        function goToHome() {
-            // Agrega la lógica para ir a la página de inicio
-            console.log('Ir a la página de inicio');
-        }
-
-        function goToCart() {
-            // Agrega la lógica para ir a la página del carrito de compras
-            console.log('Ir a la página del carrito de compras');
-        }
-    </script>
-    </body>
-  </body>
 </html>
