@@ -1,5 +1,6 @@
-.fondo {
-  background-image: url('../assets/img/Bici_2.png');
-  background-repeat: repeat-y;
 
+.app-container {
+  background: #b2b2;
+  background: -webkit-linear-gradient(to bottom, #fff, #000);
+  background: linear-gradient(to bottom, #fff, #000);
 }
