@@ -3,8 +3,9 @@ const coneccion = require('../connection');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
-const { query } = require('express');
 require('dotenv').config();
+var auth = require('../services/authentication');
+var checkRole = require('../services/checkRole');
 
 router.post('/signup', (req, res) => {
     const user = req.body;
@@ -41,7 +42,8 @@ router.post('/login', (req, res) => {
             } else if (results[0].Estado === 0) {
                 return res.status(401).json({ message: "Espere aprovacion del administrador" });
             } else if (results[0].Contraseña == user.Contraseña) {
-                const response = { Cedula: results[0].Cedula, CorreoElectronico: results[0].CorreoElectronico, Rol: results[0].Estado };
+                const response = { Cedula: results[0].Cedula, CorreoElectronico: results[0].CorreoElectronico,
+                     Estado: results[0].Estado, Rol: results[0].RolID};
                 const accessToken = jwt.sign(response, process.env.ACCESS_TOKEN, {
                     expiresIn: "8h",
                 });
@@ -55,7 +57,7 @@ router.post('/login', (req, res) => {
     })
 })
 
-router.get('/get', (req, res) => {
+router.get('/get', auth.authenticateToken, checkRole.checkRole, (req, res) => {
     var query = "select CEDULA, NOMBRE, CORREOELECTRONICO from USUARIOS where rolid=1";
     coneccion.query(query, (err, results) => {
         if (!err) {
@@ -66,10 +68,10 @@ router.get('/get', (req, res) => {
     })
 })
 
-router.patch('/update', (req, res) => {
+router.patch('/update', auth.authenticateToken, (req, res) => {
     let user = req.body;
     var query2 = "update USUARIOS set estado=? where cedula=?";
-    coneccion.query(query2, [user.estado, user.Cedula], (err, results) => {
+    coneccion.query(query2, [user.Estado, user.Cedula], (err, results) => {
 
         if (!err) {
             if (results.affectedRows == 0) {
@@ -82,8 +84,34 @@ router.patch('/update', (req, res) => {
     });
 });
 
-router.get('/checkToken', (req, res) => {
+router.get('/checkToken', auth.authenticateToken, (req, res) => {
     return res.status(200).json({ message: "Activo" })
+})
+
+router.post('/changePassword', auth.authenticateToken, (req, res) => {
+    const user = req.body;
+    const email = res.locals.CorreoElectronico;
+    var query = "select * from usuarios where CorreoElectronico=? and Contraseña=?";
+    coneccion.query(query, [email, user.aContraseña], (err, results) => {
+        if (!err) {
+            if (results.length <= 0) {
+                return res.status(400).json({ message: "Contraseña incorrecta" })
+            } else if (results[0].Contraseña == user.aContraseña) {
+                var updateQuery = "update usuarios set Contraseña=? where CorreoElectronico=?"
+                coneccion.query(updateQuery, [user.nContraseña, email], (err, results) => {
+                    if (!err){
+                        return res.status(200).json({ message: "Contraseña actualizada" })
+                    } else {
+                        return res.status(500).json(err)
+                    }
+                })
+            } else {
+                return res.status(400).json({ message: "Algo ha salido mal, inténtalo más tarde" })
+            }
+        } else {
+            return res.status(500).json(err)
+        }
+    })
 })
 
 module.exports = router;
