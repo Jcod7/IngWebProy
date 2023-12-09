@@ -4,7 +4,7 @@ import { LoginService } from 'src/app/services/auth/login.service';
 import { User } from 'src/app/services/auth/user';
 import { NavComponent } from "../../shared/nav/nav.component";
 import { HttpClientModule } from '@angular/common/http'
-import { LoginComponent } from "../../auth/login/login.component";
+import { LoginComponent } from "../../shared/login/login.component";
 import { SectionComponent } from "../../shared/section/section.component";
 import { FooterComponent } from "../../shared/footer/footer.component";
 import { HeaderComponent } from "../../shared/header/header.component";

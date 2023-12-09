@@ -9,16 +9,19 @@ import { HttpClientModule } from '@angular/common/http'
 import { SectionComponent } from "./shared/section/section.component";
 import { NewpasswordComponent } from './shared/newpassword/newpassword.component';
 import { RegisterComponent } from "./shared/register/register.component";
+import { routes } from './app-routing';
 
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    imports: [CommonModule, RouterOutlet, FooterComponent, HeaderComponent, DashboardComponent, NavComponent, NewpasswordComponent, HttpClientModule, RouterLink, SectionComponent, RegisterComponent]
+  selector: 'app-root',
+  standalone: true,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  imports: [CommonModule, RouterOutlet, FooterComponent, HeaderComponent, DashboardComponent, NavComponent, NewpasswordComponent, HttpClientModule, RouterLink, SectionComponent, RegisterComponent]
 })
 
 export class AppComponent {
-[x: string]: any;
+  [x: string]: any;
   title = 'frontend';
+  routes = routes;
+
 }
