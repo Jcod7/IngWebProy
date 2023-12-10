@@ -10,13 +10,17 @@ import { SectionComponent } from "./shared/section/section.component";
 import { NewpasswordComponent } from './shared/newpassword/newpassword.component';
 import { RegisterComponent } from "./shared/register/register.component";
 import { routes } from './app-routing';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [CommonModule, RouterOutlet, FooterComponent, HeaderComponent, DashboardComponent, NavComponent, NewpasswordComponent, HttpClientModule, RouterLink, SectionComponent, RegisterComponent]
+  imports: [CommonModule, RouterOutlet, FooterComponent, HeaderComponent, 
+    DashboardComponent, NavComponent, NewpasswordComponent, HttpClientModule, 
+    RouterLink, SectionComponent, RegisterComponent,ReactiveFormsModule]
 })
 
 export class AppComponent {
