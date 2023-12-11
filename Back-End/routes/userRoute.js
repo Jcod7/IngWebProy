@@ -10,12 +10,10 @@
     router.post('/signup', (req, res) => {
         const user = req.body;
         const selectQuery = "SELECT * FROM Usuarios WHERE CorreoElectronico=?";
-
         coneccion.query(selectQuery, [user.CorreoElectronico], (selectErr, selectResults) => {
             if (!selectErr) {
                 if (selectResults.length <= 0) {
                     const insertQuery = "INSERT INTO Usuarios (Cedula, Nombre, Apellido, CorreoElectronico, Contraseña, Direccion, Telefono) VALUES (?, ?, ?, ?, ?, ?, ?)";
-
                     coneccion.query(insertQuery, [user.Cedula, user.Nombre, user.Apellido, user.CorreoElectronico, user.Contraseña, user.Direccion, user.Telefono], (insertErr, insertResults) => {
                         if (!insertErr) {
                             return res.status(200).json({ message: "success" });
