@@ -16,9 +16,7 @@
             <div class="form-group col-md-6 py-1">
               <label class="form-label" for="inputNombres">Nombres</label>
               <input type="text" class="form-control" formControlName="name" placeholder="Ingrese su nombre">
-              <span *ngIf="isValidField('name')" class="form-text text-danger">
-                Nombre no válido
-              </span>
+
             </div>
             <div class="form-group col-md-6 py-1">
               <label class="form-label" for="inputApellidos">Apellidos</label>
@@ -37,9 +35,7 @@
             <div class="form-group col-md-6 py-1">
               <label class="form-label" for="inputCedula">Cedula/RUC</label>
               <input type="text" class="form-control" formControlName="cedula" placeholder="Ingrese su cédula/RUC">
-              <span *ngIf="isValidField('cedula')" class="form-text text-danger">
-                Cédula no válida
-              </span>
+
             </div>
           </div>
 
@@ -49,17 +45,13 @@
               <label class="form-label" for="inputEmail">Correo Electrónico</label>
               <input type="email" class="form-control" formControlName="email"
                 placeholder="Ingrese su correo electrónico">
-              <span *ngIf="isValidField('email')" class="form-text text-danger">
-                Correo electrónico no válido
-              </span>
+
             </div>
             <div class="form-group col-md-6 py-1">
               <label class="form-label" for="inputPassword">Contraseña</label>
               <input type="password" class="form-control" formControlName="password"
                 placeholder="Ingrese su contraseña">
-              <span *ngIf="isValidField('password')" class="form-text text-danger">
-                La contraseña debe tener al menos 6 caracteres
-              </span>
+
             </div>
           </div>
 
@@ -69,17 +61,13 @@
               <label class="form-label" for="inputEmailConfirm">Confirmar Correo Electrónico</label>
               <input type="email" class="form-control" formControlName="emailConfirm"
                 placeholder="Confirme su correo electrónico">
-              <span *ngIf="isValidField('emailConfirm')" class="form-text text-danger">
-                Correo electrónico no coincide
-              </span>
+
             </div>
             <div class="form-group col-md-6 py-1">
               <label class="form-label" for="inputPasswordConfirm">Confirmar Contraseña</label>
               <input type="password" class="form-control" formControlName="passwordConfirm"
                 placeholder="Confirme su contraseña">
-              <span *ngIf="isValidField('passwordConfirm')" class="form-text text-danger">
-                Contraseña no coincide
-              </span>
+
             </div>
           </div>
 
@@ -114,17 +102,13 @@
                 <option value="23">Santo Domingo de los Tsáchilas</option>
                 <option value="24">Santa Elena</option>
               </select>
-              <span *ngIf="isValidField('provincia')" class="form-text text-danger">
-                Debe seleccionar una provincia
-              </span>
+
             </div>
             <div class="form-group col-md-6 py-1">
               <label class="form-label" for="inputCodigoPostal">Código Postal</label>
               <input type="text" class="form-control" formControlName="codigoPostal"
                 placeholder="Ingrese su código postal">
-              <span *ngIf="isValidField('codigoPostal')" class="form-text text-danger">
-                Código postal no válido
-              </span>
+
             </div>
           </div>
 
@@ -137,9 +121,7 @@
               <label class="form-check-label" for="gridCheck">
                 He leído y acepto los <a href="#">términos y condiciones de uso</a>
               </label>
-              <span *ngIf="isValidField('terminos')" class="form-text text-danger">
-                Debe aceptar los términos y condiciones
-              </span>
+
             </div>
           </div>
 

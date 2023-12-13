@@ -17,15 +17,18 @@ import { CedulaValidatorService } from 'src/app/services/auth/cedula-validator';
 export class RegisterComponent {
   public myForm: FormGroup = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
-    last_name: ['', [Validators.required, Validators.minLength(2)]],
+    apellidos: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required]],
-    username: ['', [Validators.required]],
+    telefono: ['', [Validators.required, Validators.minLength(10)]],
+    emailConfirm: ['', [Validators.required]],
     password: ['', [Validators.required, Validators.minLength(6)]],
-    password2: ['', [Validators.required]],
+    passwordConfirm: ['', [Validators.required]],
+    provincia: ['', [Validators.required]],
+    terminos: ['', [Validators.required]],
+    codigoPostal: ['', [Validators.required]],
+
     cedula: ['', [Validators.required]],  // Agrega la validación según tus requisitos para la cédula
     // ... otros campos
-  }, {
-    validators: [this.isFieldOneEqualFieldTwo('password', 'password2')],
   });
 
   constructor(
@@ -39,18 +42,6 @@ export class RegisterComponent {
     return control ? control.valid && control.touched : false;
   }
 
-  isFieldOneEqualFieldTwo(field1: string, field2: string) {
-    return (formGroup: FormGroup) => {
-      const control1 = formGroup.controls[field1];
-      const control2 = formGroup.controls[field2];
-
-      if (control1.value !== control2.value) {
-        control2.setErrors({ notEqual: true });
-      } else {
-        control2.setErrors(null);
-      }
-    };
-  }
 
   onSubmit() {
     this.myForm.markAllAsTouched();
