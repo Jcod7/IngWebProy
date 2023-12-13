@@ -5,8 +5,8 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { LoginService } from 'src/app/services/auth/login.service';
 import { LoginRequest } from 'src/app/services/auth/loginRequest';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NavComponent } from "../../shared/nav/nav.component";
-import { NewpasswordComponent } from "../../shared/newpassword/newpassword.component";
+import { NavComponent } from "../nav/nav.component";
+import { NewpasswordComponent } from "../newpassword/newpassword.component";
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from 'src/app/shared/register/register.component';
 
